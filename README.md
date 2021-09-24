@@ -1,9 +1,11 @@
 # Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+weekend-redux-feedback-loop
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This is my version of Prime Digital Academy's Daily Reflections Form.  This was the perfect opportunity to practice Routing through different pages, and using Redux Store to better move data around your app.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+[x]-update README.
+[]-Create the form components; "/feeling", "/understanding", "/support",          "/comments"
+[]-Link together each blank page, importing from React and Redux only as necessary.
+[]-
