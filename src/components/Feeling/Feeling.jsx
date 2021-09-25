@@ -10,7 +10,7 @@ function Feeling() {
     //Set history to change pages.
     const history = useHistory();
     //Set a variable to push value into.
-    const [feelingsValue, setFeelingsValue] = useState();
+    const [feelingsValue, setFeelingsValue] = useState('');
 
     //Function to change page.
     const nextPage = () => {
@@ -30,13 +30,15 @@ function Feeling() {
     return (
         <>
             <h2>How are you feeling today?</h2>
+{/* Click submit, call addValue which will send value to Redux */}
             <form onSubmit={(event) => addValue(event)}>
                 <input value={feelingsValue}
-                        type="number"
-                        placeholder='number from 1-5'
-                        onChange={(event) => setFeelingsValue(event.target.value)} />
+                    type="number"
+                    placeholder='number from 1-5'
+                    onChange={(event) => setFeelingsValue(event.target.value)} />
 
                 <button type='submit' value='Submit'>Submit</button>
+{/* Click Next, call nextPage function */}
                 <button onClick={nextPage}>Next</button>
             </form>
         </>
@@ -44,3 +46,4 @@ function Feeling() {
 }
 
 export default Feeling;
+
