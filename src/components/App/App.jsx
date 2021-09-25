@@ -21,8 +21,8 @@ Feeling, Understanding, Support and Comments.
 This is the first route to page 1: "Feeling" and will also be Home Page */}
         <Router>
           <Route exact path="/" component={Feeling} />
-        </Router>
-        <Router>
+        </Router> 
+         <Router>
           <Route exact path="/understanding" component={Understanding} />
         </Router>
         <Router>
