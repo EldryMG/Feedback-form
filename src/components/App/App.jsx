@@ -6,6 +6,8 @@ import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from  '../Support/Support';
 import Comments from  '../Comments/Comments';
+import Review from '../Review/Review';
+import Final from '../Final/Final';
 
 function App() {
 
@@ -31,7 +33,12 @@ This is the first route to page 1: "Feeling" and will also be Home Page */}
         <Router>
           <Route exact path="/comments" component={Comments} />
         </Router>
-
+        <Router>
+          <Route exact path="/review" component={Review} />
+        </Router>
+        <Router>
+          <Route exact path="/final" component={Final} />
+        </Router>
       </main>
     </div>
   );
