@@ -14,7 +14,10 @@ This is my version of Prime Digital Academy's Daily Reflections Form.  This was 
 
 Aha moments: 
     -I did 2 different styles of the first page. The first was a form that had an input field that pushed the user input via 'event.target.value' into a useState pair.  on Submit, another function would be called that would use the useState value and dispatch it to Redux.
-
     The second method used the same input with event.target.value which would push to useState; the button onClick would call dispatch with the useState data to send to Redux; no second function needed.
 
+    -the <form> didn't like my seperate button to change the page, added to the onSubmit function to history.push(/nextpage) instead.
+
     -console.log can be used inside a Reducer. I'm still using logger but at this stage I like to have eyes on data as much as possible.
+
+    -the values are changing every time I dispatch another value in the reducer... I want to keep one reducer, though.
