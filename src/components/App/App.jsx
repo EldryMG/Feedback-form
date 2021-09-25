@@ -18,18 +18,20 @@ function App() {
       <main>
 {/* There will be 4 pages to this app, titled: 
 Feeling, Understanding, Support and Comments. 
-This is the first route to page 1: "Feeling" */}
+This is the first route to page 1: "Feeling" and will also be Home Page */}
         <Router>
           <Route exact path="/" component={Feeling} />
         </Router>
         <Router>
-          <Route exact path="/Understanding" component={Understanding} />
-        </Router><Router>
-          <Route exact path="/Support" component={Support} />
-        </Router><Router>
-          <Route exact path="/Comments" component={Comments} />
+          <Route exact path="/understanding" component={Understanding} />
         </Router>
-        
+        <Router>
+          <Route exact path="/support" component={Support} />
+        </Router>
+        <Router>
+          <Route exact path="/comments" component={Comments} />
+        </Router>
+
       </main>
     </div>
   );
