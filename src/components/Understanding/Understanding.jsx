@@ -17,14 +17,17 @@ function Understanding() {
 
     const addUnderstanding = (event) => {
         event.preventDefault()
-        console.log('in addUnderstanding');
-        const action = {
-            type: 'SET_UNDERSTANDING',
-            payload: understandingValue,
-        };
-        dispatch(action);
-        history.push('/support');
-    }
+        if (understandingValue > 5 || understandingValue < 1) {
+            alert('Please pick a number between 1 and 5');
+        } else {
+            const action = {
+                type: 'SET_UNDERSTANDING',
+                payload: understandingValue,
+            };
+            dispatch(action);
+            history.push('/support');
+        }
+    };
 
     return (
         <>
