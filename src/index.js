@@ -9,8 +9,11 @@ import logger from 'redux-logger';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
+const testTotal = {}
+
 const feelingReducer = (state = [], action) => {
     if (action.type === 'SET_FEELING'){
+        console.log('in feelingReducer',action.payload)
         return action.payload;
     }
     return state;

@@ -30,7 +30,7 @@ function Feeling() {
     return (
         <>
             <h2>How are you feeling today?</h2>
-{/* Click submit, call addValue which will send value to Redux */}
+{/* Click submit, call addValue which will send data to Redux */}
             <form onSubmit={(event) => addValue(event)}>
                 <input value={feelingsValue}
                     type="number"
