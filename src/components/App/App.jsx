@@ -18,9 +18,10 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
       <main>
-{/* There will be 4 pages to this app, titled: 
-Feeling, Understanding, Support and Comments. 
-This is the first route to page 1: "Feeling" and will also be Home Page */}
+{/* There will be 6 pages to this app, titled: 
+Feeling, Understanding, Support and Comments, Review and Final 
+This is the first route to page 1: "Feeling" and will also be Home Page.
+Final takes user back to Home if they want to restart survey. */}
         <Router>
           <Route exact path="/" component={Feeling} />
         </Router> 

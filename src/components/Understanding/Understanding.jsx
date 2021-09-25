@@ -1,10 +1,10 @@
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import React from 'react';
-import { useState } from 'react'; //for setting feelingsValue
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-// This is a copy of the previous page. Line 23 says payload instead of result for testing purposes.
+// This is a copy of the previous page. Line 25 says payload instead of result for testing purposes.
 
 function Understanding() {
     //dispatch to Redux
