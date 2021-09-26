@@ -26,7 +26,7 @@ const actualReducer = (state = {}, action) => {
         state.support = action.result;
         return state;
     } else if (action.type === 'SET_COMMENTS'){
-        state.comment = action.result;
+        state.comments = action.result;
         return state;
     } else if (action.type === 'CLEAR'){
         return {};

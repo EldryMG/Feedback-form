@@ -6,7 +6,7 @@ const pool = require('../modules/pool')
 
 // POST to DB
 router.post('/', (req, res) => {
-        //2 add a console
+        console.log('SERVER SIDE DATA', req.body)
     let feedbackToAdd = req.body;
     console.log('this is feedbackToAdd', feedbackToAdd);
     let sqlText = `INSERT INTO feedback ("feeling", "understanding", "support", "comments")
@@ -14,12 +14,12 @@ router.post('/', (req, res) => {
     pool.query(sqlText, [feedbackToAdd.feeling,
                         feedbackToAdd.understanding,
                         feedbackToAdd.support,
-                        feedbackToAdd.comment])
+                        feedbackToAdd.comments])
         .then((result) => {
             res.sendStatus(201);
         })
         .catch((error) => {
-            //2 add a console
+        console.log('SERVER SIDE ERROR', error)
         res.sendStatus(500);
     })
 });

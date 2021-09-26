@@ -13,6 +13,7 @@ function Comments() {
     const [commentsValue, setCommentsValue] = useState('');
 
     const addComments = (event) => {
+        ('in comments', commentsValue);
         event.preventDefault();
         const action = {
                 type: 'SET_COMMENTS',

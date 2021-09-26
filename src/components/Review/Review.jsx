@@ -13,6 +13,7 @@ function Review(){
     const history = useHistory();
 
     const submitAndHistory = () => {
+        console.log('CLIENT SIDE REVIEWVALUES', reviewValues)
         axios({
             method: 'POST',
             url:'/feedback',
@@ -20,11 +21,10 @@ function Review(){
                 feeling: reviewValues.feeling,
                 understanding: reviewValues.understanding,
                 support: reviewValues.support,
-                comments: reviewValues.comment,
-                flagged: false,
+                comments: reviewValues.comments,
             }
         }).then( response => {
-            console.log('POST successfull')
+            console.log('POST successfull', reviewValues)
             
         }).catch(error => {
             history.push('/final')
@@ -39,7 +39,7 @@ function Review(){
         <h3>Feeling: {reviewValues.feeling}</h3>
         <h3>Understanding: {reviewValues.understanding}</h3>
         <h3>Support: {reviewValues.support}</h3>
-        <h3>Comments: {reviewValues.comment}</h3>
+        <h3>Comments: {reviewValues.comments}</h3>
         <Button variant="contained" size="small" onClick={submitAndHistory}>Submit</Button>
         </>
 
