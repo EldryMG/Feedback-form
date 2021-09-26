@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 
+
 function Admin(){
     const [adminData, setAdminData] = useState([]);
 
@@ -17,9 +18,15 @@ function Admin(){
         })
     }
 
+    useEffect(() => {
+        console.log('in useEffect')
+        getServerInfo();
+    }, [])
+
     return (
         <>
             <h3>Recent Submissions</h3>
+            <p>{JSON.stringify(adminData)}</p>
             <table>
                 <thead>
                     <tr>
@@ -28,6 +35,7 @@ function Admin(){
                         <th>Understanding</th>
                         <th>Support</th>
                         <th>Comments</th>
+                        <th>Flagged</th>
                         <th>Timestamp</th>
                     </tr>
                 </thead>

@@ -13,7 +13,7 @@ function Review(){
     const history = useHistory();
 
     const submitAndHistory = () => {
-        console.log('CLIENT SIDE REVIEWVALUES', reviewValues)
+        // console.log('CLIENT SIDE REVIEWVALUES', reviewValues)
         axios({
             method: 'POST',
             url:'/feedback',
@@ -24,10 +24,9 @@ function Review(){
                 comments: reviewValues.comments,
             }
         }).then( response => {
-            console.log('POST successfull', reviewValues)
-            
-        }).catch(error => {
+            // console.log('POST successfull', reviewValues)
             history.push('/final')
+        }).catch(error => {
             console.log('There is an error in POST', error);
         })
     }

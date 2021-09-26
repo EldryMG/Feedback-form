@@ -24,4 +24,16 @@ router.post('/', (req, res) => {
     })
 });
 
+//GET from DB
+router.get('/', (req, res) => {
+    console.log('IN SERVER-SIDE GET');
+    pool.query('SELECT * from "feedback";')
+    .then((result) => {
+        res.send(result.rows);
+    }).catch((error) => {
+        console.log('Error GET /feedback',error)
+        res.sendStatus(500);
+    })
+})
+
 module.exports = router;
