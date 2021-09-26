@@ -2,12 +2,14 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import {Button, Paper} from '@material-ui/core';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from  '../Support/Support';
 import Comments from  '../Comments/Comments';
 import Review from '../Review/Review';
 import Final from '../Final/Final';
+import Admin from '../Admin/Admin';
 
 function App() {
 
@@ -40,6 +42,12 @@ Final takes user back to Home if they want to restart survey. */}
         <Router>
           <Route exact path="/final" component={Final} />
         </Router>
+        <Router>
+          <Route path="/admin"> 
+          <Admin />
+          </Route>
+        </Router>
+
       </main>
     </div>
   );

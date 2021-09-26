@@ -17,10 +17,10 @@ This is my version of Prime Digital Academy's Daily Reflections Form.  This was 
 [x] - Review page 'submit' button should;
        [] - Post data to server.
        [] - take user to Success page.
-[]  -Sucess page: Create button to retake survey.
-    - button should clear all fields from actualReducer.
+[x]  -Sucess page: Create button to retake survey.
+    [x]- button should clear all fields from actualReducer.
 
-[] - small Material UI designs.
+[x] - small Material UI designs.
 
 
 Aha moments: 

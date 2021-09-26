@@ -35,7 +35,7 @@ function Support() {
                     placeholder='number from 1-5'
                     onChange={(event) => setSupportValue(event.target.value)} />
 
-                <Button variant="contained" type='submit' value='Submit'>Submit</Button>
+                <Button variant="contained" size="small" type='submit' value='Submit'>Submit</Button>
             </form>
         </>
     );

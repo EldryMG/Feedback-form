@@ -1,6 +1,6 @@
-const pool = require('../modules/pool');
 const express = require('express');
 const router = express.Router();
+const pool = require('../modules/pool')
 
 
 // POST to DB
@@ -9,7 +9,7 @@ router.post('/', (req, res) => {
     let feedbackToAdd = req.body;
     console.log('this is feedbackToAdd', feedbackToAdd);
     let sqlText = `INSERT INTO feedback ("feeling", "understanding", "support", "comments")
-                    VALUES ($1, $2, $3, $4)`;
+                    VALUES ($1, $2, $3, $4);`;
     pool.query(sqlText, [feedbackToAdd.feeling,
                         feedbackToAdd.understanding,
                         feedbackToAdd.support,

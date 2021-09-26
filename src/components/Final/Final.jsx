@@ -19,7 +19,7 @@ const restartSurvey = () => {
     return (
         <>
         <h1>Thank you!</h1>
-        <Button variant="outlined" onClick={restartSurvey}>Retake Survey</Button>
+        <Button variant="outlined" size="medium" onClick={restartSurvey}>Retake Survey</Button>
         </>
     );
 }
