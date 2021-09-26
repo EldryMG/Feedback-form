@@ -3,27 +3,45 @@ import { useHistory } from 'react-router-dom';
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
 
 function Review(){
 
     const reviewValues = useSelector(store => store.actualReducer);
 
+    const history = useHistory();
+
+    const submitAndHistory = () => {
+        axios({
+            method: 'POST',
+            url:'/',
+            data: {
+                feeling: reviewValues.feeling,
+                understanding: reviewValues.understanding,
+                support: reviewValues.support,
+                comments: reviewValues.comment,
+                flagged: false,
+            }
+        }).then( response => {
+            console.log('POST successfull')
+            
+        }).catch(error => {
+            history.push('/final')
+            console.log('There is an error in POST', error);
+        })
+    }
+
     return(
         <>
-        <p>Some Review</p>       
-        <p>{JSON.stringify(reviewValues)}</p>
+        <h1>Review</h1>       
         <h3>Feeling: {reviewValues.feeling}</h3>
         <h3>Understanding: {reviewValues.understanding}</h3>
         <h3>Support: {reviewValues.support}</h3>
         <h3>Comments: {reviewValues.comment}</h3>
+        <button onClick={submitAndHistory}>Submit</button>
         </>
 
     );
 }
 
-output = {"feeling":"4",
-        "understanding":"3",
-        "support":"2",
-        "comment":"leaving a comment"}
-        
 export default Review;

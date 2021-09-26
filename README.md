@@ -11,16 +11,25 @@ This is my version of Prime Digital Academy's Daily Reflections Form.  This was 
 [x]-Complete Form on "/feeling", pass data to Redux.~1 hour
 [x]-Receive data from "/feeling".
 [x]-Repeat for "/understanding".
-[] - test outputs and inputs into Redux.
-[] - Repeat for final 2 pages.
+[x] - test outputs and inputs into Redux.
+[x] - Repeat for final 2 pages.
+[x] - Display results on Review page.
+[x] - Review page 'submit' button should;
+       [] - Post data to server.
+       [] - take user to Success page.
+[]  -Sucess page: Create button to retake survey.
+    - button should clear all fields from actualReducer.
 
 
 Aha moments: 
-    -I did 2 different styles of the first page. The first was a form that had an input field that pushed the user input via 'event.target.value' into a useState pair.  on Submit, another function would be called that would use the useState value and dispatch it to Redux.
-    The second method used the same input with event.target.value which would push to useState; the button onClick would call dispatch with the useState data to send to Redux; no second function needed.
+    - Was able to get 2 different combinations of new buttons, functions to create proper functionality.
 
     -the <form> didn't like my seperate button to change the page, added to the onSubmit function to history.push(/nextpage) instead.
 
     -console.log can be used inside a Reducer. I'm still using logger but at this stage I like to have eyes on data as much as possible.
 
     -the values are changing every time I dispatch another value in the reducer... I want to keep one reducer, though.
+
+    - 
+
+    

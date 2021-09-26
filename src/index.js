@@ -28,6 +28,8 @@ const actualReducer = (state = {}, action) => {
     } else if (action.type === 'SET_COMMENTS'){
         state.comment = action.result;
         return state;
+    } else if (action.type === 'CLEAR'){
+        return {};
     }
     return state;
 };
