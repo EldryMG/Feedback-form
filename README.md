@@ -19,6 +19,8 @@ This is my version of Prime Digital Academy's Daily Reflections Form.  This was 
        [x] - take user to Success page.
 [x]  -Sucess page: Create button to retake survey.
     [x]- button should clear all fields from actualReducer.
+[x] - Admin page created and routed.
+[x] - Data sent to admin page and appended in DOM.
 
 [x] - small Material UI designs.
 
@@ -30,8 +32,6 @@ Aha moments:
 
     -console.log can be used inside a Reducer. I'm still using logger but at this stage I like to have eyes on data as much as possible.
 
-    -the values are changing every time I dispatch another value in the reducer... I want to keep one reducer, though.
-
-    - 
+    -You can add a property to the data while it is in the reducer. 
 
     

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import React from 'react';
 
 
 
@@ -11,11 +12,15 @@ function Admin(){
             method: 'GET',
             url: '/feedback'
         }).then(response => {
-            setAdminData(response)
-            console.log(response)
+            setAdminData(response.data)
+            console.log(response.data)
         }).catch(error => {
             console.log('There was an error getting data back', error)
         })
+    }
+
+    const flagPost = () => {
+        console.log('in flag')
     }
 
     useEffect(() => {
@@ -26,7 +31,7 @@ function Admin(){
     return (
         <>
             <h3>Recent Submissions</h3>
-            <p>{JSON.stringify(adminData)}</p>
+            {/* <p>{JSON.stringify(adminData)}</p> */}
             <table>
                 <thead>
                     <tr>
@@ -39,11 +44,22 @@ function Admin(){
                         <th>Timestamp</th>
                     </tr>
                 </thead>
+                <tbody>
+                {adminData.map(student =>(
+                    <tr key={student.id}>
+                        <td>{student.id}</td>
+                        <td>{student.feeling}</td>
+                        <td>{student.understanding}</td>
+                        <td>{student.support}</td>
+                        <td>{student.comments}</td>
+                        <td>{student.flagged}</td>
+                        <button>Flag</button>
+                        <td>{student.date}</td>
+                    </tr>
+                ))}</tbody>
             </table>
 
         </>
-
-
 
     );
 
