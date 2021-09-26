@@ -2,6 +2,11 @@ import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom'
 import React from 'react';
 import { useState } from 'react'; //for setting feelingsValue
 import { useDispatch } from 'react-redux'; //only useDispatch is used.
+import Button from '@material-ui/core/Button';
+import { TextField } from '@material-ui/core';
+<TextField id="filled-basic" label="Filled" variant="filled" />
+
+
 
 
 function Feeling() {
@@ -34,12 +39,12 @@ function Feeling() {
             <h2>How are you feeling today?</h2>
             {/* Click submit, call addValue which will send data to Redux */}
             <form onSubmit={(event) => addValue(event)}>
-                <input value={feelingsValue}
+                <TextField value={feelingsValue}
                     type="number"
                     placeholder='number from 1-5'
                     onChange={(event) => setFeelingsValue(event.target.value)} />
 
-                <button type='submit' value='Submit'>Submit</button>
+                <Button variant="contained" type='submit' value='Submit'>Submit</Button>
             </form>
         </>
     );

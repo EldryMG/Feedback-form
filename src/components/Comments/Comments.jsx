@@ -3,6 +3,9 @@ import { useHistory } from 'react-router-dom';
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import Button from '@material-ui/core/Button';
+import { TextField } from '@material-ui/core';
+<TextField id="filled-basic" label="Filled" variant="filled" />
 
 function Comments() {
     const dispatch = useDispatch();
@@ -23,12 +26,12 @@ function Comments() {
         <>
             <h2>Any comments you'd like to add for today?</h2>
             <form onSubmit={(event) => addComments(event)}>
-                <input value={commentsValue}
+                <TextField value={commentsValue}
                     type="text"
                     placeholder='Leave a comment'
                     onChange={(event) => setCommentsValue(event.target.value)} />
 
-                <button type='submit' value='Submit'>Submit</button>
+                <Button variant="contained" type='submit' value='Submit'>Submit</Button>
             </form>
         </>
     );

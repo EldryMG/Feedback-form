@@ -4,6 +4,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
 
 function Review(){
 
@@ -38,7 +39,7 @@ function Review(){
         <h3>Understanding: {reviewValues.understanding}</h3>
         <h3>Support: {reviewValues.support}</h3>
         <h3>Comments: {reviewValues.comment}</h3>
-        <button onClick={submitAndHistory}>Submit</button>
+        <Button variant="contained" onClick={submitAndHistory}>Submit</Button>
         </>
 
     );

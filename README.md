@@ -20,6 +20,8 @@ This is my version of Prime Digital Academy's Daily Reflections Form.  This was 
 []  -Sucess page: Create button to retake survey.
     - button should clear all fields from actualReducer.
 
+[] - small Material UI designs.
+
 
 Aha moments: 
     - Was able to get 2 different combinations of new buttons, functions to create proper functionality.

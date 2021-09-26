@@ -2,6 +2,7 @@ import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom'
 import React from 'react';
 import { useState } from 'react'; //for setting feelingsValue
 import { useDispatch } from 'react-redux'; //only useDispatch is used.
+import Button from '@material-ui/core/Button';
 
 
 
@@ -18,7 +19,7 @@ const restartSurvey = () => {
     return (
         <>
         <h1>Thank you!</h1>
-        <button onClick={restartSurvey}>Retake Survey</button>
+        <Button variant="outlined" onClick={restartSurvey}>Retake Survey</Button>
         </>
     );
 }

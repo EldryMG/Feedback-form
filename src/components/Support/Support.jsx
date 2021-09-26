@@ -3,6 +3,9 @@ import { useHistory } from 'react-router-dom';
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import Button from '@material-ui/core/Button';
+import { TextField } from '@material-ui/core';
+<TextField id="filled-basic" label="Filled" variant="filled" />
 
 function Support() {
     const dispatch = useDispatch();
@@ -27,12 +30,12 @@ function Support() {
         <>
             <h2>How well are you being supported?</h2>
             <form onSubmit={(event) => addSupport(event)}>
-                <input value={supportValue}
+                <TextField value={supportValue}
                     type="number"
                     placeholder='number from 1-5'
                     onChange={(event) => setSupportValue(event.target.value)} />
 
-                <button type='submit' value='Submit'>Submit</button>
+                <Button variant="contained" type='submit' value='Submit'>Submit</Button>
             </form>
         </>
     );
