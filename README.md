@@ -15,8 +15,8 @@ This is my version of Prime Digital Academy's Daily Reflections Form.  This was 
 [x] - Repeat for final 2 pages.
 [x] - Display results on Review page.
 [x] - Review page 'submit' button should;
-       [] - Post data to server.
-       [] - take user to Success page.
+       [x] - Post data to server.
+       [x] - take user to Success page.
 [x]  -Sucess page: Create button to retake survey.
     [x]- button should clear all fields from actualReducer.
 

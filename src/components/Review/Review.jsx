@@ -15,7 +15,7 @@ function Review(){
     const submitAndHistory = () => {
         axios({
             method: 'POST',
-            url:'/',
+            url:'/feedback',
             data: {
                 feeling: reviewValues.feeling,
                 understanding: reviewValues.understanding,
@@ -34,7 +34,8 @@ function Review(){
 
     return(
         <>
-        <h1>Review</h1>       
+        <h1>Review</h1>
+        <p>{JSON.stringify(reviewValues)}</p>       
         <h3>Feeling: {reviewValues.feeling}</h3>
         <h3>Understanding: {reviewValues.understanding}</h3>
         <h3>Support: {reviewValues.support}</h3>

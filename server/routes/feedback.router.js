@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const pg = require('pg');
 const pool = require('../modules/pool')
 
 
 // POST to DB
 router.post('/', (req, res) => {
-    console.log('in feedback POST with', req.body);
+        //2 add a console
     let feedbackToAdd = req.body;
     console.log('this is feedbackToAdd', feedbackToAdd);
     let sqlText = `INSERT INTO feedback ("feeling", "understanding", "support", "comments")
@@ -18,7 +19,7 @@ router.post('/', (req, res) => {
             res.sendStatus(201);
         })
         .catch((error) => {
-        console.log(`error making database query ${sqlText}`, error);
+            //2 add a console
         res.sendStatus(500);
     })
 });
