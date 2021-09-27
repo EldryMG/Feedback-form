@@ -31,7 +31,11 @@ function Comments() {
                     placeholder='Leave a comment'
                     onChange={(event) => setCommentsValue(event.target.value)} />
 
-                <Button variant="contained" size="small" type='submit' value='Submit'>Submit</Button>
+                <Button style = {{ backgroundColor: '#4982dd' }}  
+                                variant="contained" 
+                                size="small" 
+                                type='submit' 
+                                value='Submit'>Submit</Button>
             </form>
         </>
     );

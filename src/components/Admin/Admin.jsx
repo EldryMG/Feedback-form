@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import React from 'react';
+import AdminItem from '../AdminItem/AdminItem';
 
 
 
@@ -19,9 +20,6 @@ function Admin(){
         })
     }
 
-    const flagPost = () => {
-        console.log('in flag')
-    }
 
     useEffect(() => {
         console.log('in useEffect')
@@ -31,7 +29,7 @@ function Admin(){
     return (
         <>
             <h3>Recent Submissions</h3>
-            {/* <p>{JSON.stringify(adminData)}</p> */}
+             <p>{JSON.stringify(adminData)}</p>
             <table>
                 <thead>
                     <tr>
@@ -52,10 +50,12 @@ function Admin(){
                         <td>{student.understanding}</td>
                         <td>{student.support}</td>
                         <td>{student.comments}</td>
-                        <td>{student.flagged}</td>
-                        <button>Flag</button>
+                        <td><AdminItem
+                            id={student.id}
+                            flagged={student.flagged}/></td>
                         <td>{student.date}</td>
                     </tr>
+                    
                 ))}</tbody>
             </table>
 

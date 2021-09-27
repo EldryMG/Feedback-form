@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import {Button, Paper} from '@material-ui/core';
+import { MdSave } from "react-icons/md";
 
 function Review(){
 
@@ -34,12 +35,12 @@ function Review(){
     return(
         <>
         <h1>Review</h1>
-        <p>{JSON.stringify(reviewValues)}</p>       
+        {/* <p>{JSON.stringify(reviewValues)}</p> */}
         <h3>Feeling: {reviewValues.feeling}</h3>
         <h3>Understanding: {reviewValues.understanding}</h3>
         <h3>Support: {reviewValues.support}</h3>
         <h3>Comments: {reviewValues.comments}</h3>
-        <Button variant="contained" size="small" onClick={submitAndHistory}>Submit</Button>
+        <Button variant="contained" size="large" onClick={submitAndHistory}><MdSave size="1.5em"/></Button>
         </>
 
     );

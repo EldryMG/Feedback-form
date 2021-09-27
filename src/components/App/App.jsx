@@ -10,6 +10,7 @@ import Comments from  '../Comments/Comments';
 import Review from '../Review/Review';
 import Final from '../Final/Final';
 import Admin from '../Admin/Admin';
+import { IoSkull } from "react-icons/io5";
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Feedback!</h1>
-        <h4>Don't forget it!</h4>
+        <h3><IoSkull size="1.5em" /> Don't forget it! <IoSkull size="1.5em" /></h3>
       </header>
       <main>
 {/* There will be 6 pages to this app, titled: 
