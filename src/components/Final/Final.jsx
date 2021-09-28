@@ -3,6 +3,7 @@ import React from 'react';
 import { useState } from 'react'; //for setting feelingsValue
 import { useDispatch } from 'react-redux'; //only useDispatch is used.
 import Button from '@material-ui/core/Button';
+import Signature from '../Signature/Signature';
 
 
 
@@ -21,6 +22,7 @@ const restartSurvey = () => {
         <>
         <h1>Thank you!</h1>
         <Button variant="outlined" size="medium" onClick={restartSurvey}>Retake Survey</Button>
+        <Signature />
         </>
     );
 }

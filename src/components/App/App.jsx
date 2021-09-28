@@ -10,6 +10,7 @@ import Comments from  '../Comments/Comments';
 import Review from '../Review/Review';
 import Final from '../Final/Final';
 import Admin from '../Admin/Admin';
+import Signature from '../Signature/Signature';
 import { IoSkull } from "react-icons/io5";
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Feedback!</h1>
-        <h3><IoSkull size="1.5em" /> Don't forget it! <IoSkull size="1.5em" /></h3>
+        <h3><IoSkull size="1.5em" color="white" /> Don't forget it! <IoSkull size="1.5em" color="white" /></h3>
       </header>
       <main>
 {/* There will be 6 pages to this app, titled: 
@@ -44,13 +45,13 @@ Final takes user back to Home if they want to restart survey. */}
           <Route exact path="/final" component={Final} />
         </Router>
         <Router>
-          <Route path="/admin"> 
+          <Route path="/admin" > 
           <Admin />
           </Route>
         </Router>
-
       </main>
-    </div>
+      </div>
+
   );
 }
 

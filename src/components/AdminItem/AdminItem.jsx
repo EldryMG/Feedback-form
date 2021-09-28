@@ -1,4 +1,4 @@
-function AdminItem(id, flagged){
+function AdminItem({id , flagged}){
 
 const screamSomething = () => {
     console.log('in screamSomething')
@@ -9,5 +9,6 @@ const screamSomething = () => {
 
     );
 }
+
 
 export default AdminItem;
