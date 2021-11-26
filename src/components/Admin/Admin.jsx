@@ -7,7 +7,7 @@ import AdminItem from '../AdminItem/AdminItem';
 
 function Admin(){
     const [adminData, setAdminData] = useState([]);
-
+//get Client-side
     const getServerInfo = () =>{
         axios({
             method: 'GET',
@@ -19,10 +19,22 @@ function Admin(){
             console.log('There was an error getting data back', error)
         })
     }
+//put Client-side
+    const markFlagged = (id) =>{
+        console.log('in markFlagged', id)
+        axios({
+            method: 'PUT',
+            url:`/feedback/` + id,
+        }).then(response => {
+            console.log('response.data is', id)
+            getServerInfo();
+        }).catch(error => {
+            console.log('OOPS,', error)
+        })
+    }
 
 
     useEffect(() => {
-        console.log('in useEffect')
         getServerInfo();
     }, [])
 
@@ -54,6 +66,7 @@ function Admin(){
                             id={student.id}
                             flagged={student.flagged}/></td>
                         <td>{student.date}</td>
+                        <button onClick={() => markFlagged(student.id)}>Flag</button>
                     </tr>
                     
                 ))}</tbody>

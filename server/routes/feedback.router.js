@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
 
 //GET from DB
 router.get('/', (req, res) => {
-    console.log('IN SERVER-SIDE GET');
+    // console.log('IN SERVER-SIDE GET');
     pool.query('SELECT * from "feedback";')
     .then((result) => {
         res.send(result.rows);
@@ -35,5 +35,21 @@ router.get('/', (req, res) => {
         res.sendStatus(500);
     })
 })
+
+//Update Admin button
+router.put('/:id', (req,res) => {
+    console.log('in PUT', req.params);
+    const itemId = req.params.id;
+    const queryText = `UPDATE "feedback"
+                       SET "flagged" = 'TRUE'
+                       WHERE "id" = $1;`;
+    pool.query(queryText, [itemId]).then((result) => {
+        console.log('IN PUT', itemId);
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('ROUTER SIDE', error);
+        res.sendStatus(500);
+    });
+});
 
 module.exports = router;

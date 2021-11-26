@@ -13,7 +13,6 @@ import { Provider } from 'react-redux';
 const testTotal = {}
 
 // Setting state to an empty object, incoming data will be key:value pairs.
-
 const actualReducer = (state = {}, action) => {
     if (action.type === 'SET_FEELING') {
         console.log('SET_FEELING', action.result)

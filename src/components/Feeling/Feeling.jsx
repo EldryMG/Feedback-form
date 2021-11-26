@@ -4,7 +4,7 @@ import { useState } from 'react'; //for setting feelingsValue
 import { useDispatch } from 'react-redux'; //only useDispatch is used.
 import Button from '@material-ui/core/Button';
 import { TextField } from '@material-ui/core';
-<TextField id="filled-basic" label="Filled" variant="filled" />
+import './Feeling.css'
 
 
 
@@ -40,11 +40,11 @@ function Feeling() {
             {/* Click submit, call addValue which will send data to Redux */}
             <form onSubmit={(event) => addValue(event)}>
                 <TextField value={feelingsValue}
-                    type="number"
-                    placeholder='number from 1-5'
+                    label="number from 1-5"
+                    type="text"
                     onChange={(event) => setFeelingsValue(event.target.value)} />
 
-                <Button style = {{ backgroundColor: '#4982dd' }} variant="contained" size="small" type='submit' value='Submit'>Submit</Button>
+                <button className="feeling-submit-button" type='submit' value='Submit'>Submit</button>
             </form>
         </>
     );

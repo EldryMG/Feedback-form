@@ -1,0 +1,21 @@
+.feeling-submit-button {
+    width: 80px;
+    height: 40px;
+    margin: 10px;
+    margin-left: 20px;
+    border: none;
+   background-color: #139fd6;
+    color: white;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+
+    transition: background-color .4s linear;
+}
+
+.feeling-submit-button:hover,
+.feeling-submit-button:hover::after{
+  cursor: pointer;
+  background-color: #0f74af;
+  transition: background-color 0.23s linear;
+}
