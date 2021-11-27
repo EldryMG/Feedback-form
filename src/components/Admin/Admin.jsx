@@ -55,21 +55,17 @@ function Admin(){
                     </tr>
                 </thead>
                 <tbody>
-                {adminData.map(student =>(
-                    <tr key={student.id}>
-                        <td>{student.id}</td>
-                        <td>{student.feeling}</td>
-                        <td>{student.understanding}</td>
-                        <td>{student.support}</td>
-                        <td>{student.comments}</td>
-                        <td><AdminItem
-                            id={student.id}
-                            flagged={student.flagged}/></td>
-                        <td>{student.date}</td>
-                        <button onClick={() => markFlagged(student.id)}>Flag</button>
-                    </tr>
-                    
-                ))}</tbody>
+                    {adminData.map(student => {
+                        return (<AdminItem key={student.id}
+                                           id={student.id}
+                                           feeling={student.feeling}
+                                           understanding={student.understanding}
+                                           support={student.support}
+                                           comments={student.comments}
+                                           flagged={student.flagged}
+                                           date={student.date} />);                   
+                    })}
+                </tbody>
             </table>
 
         </>

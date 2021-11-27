@@ -1,13 +1,28 @@
-function AdminItem({id , flagged}){
+import  React from 'react';
+import { useHistory } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
 
-const screamSomething = () => {
-    console.log('in screamSomething')
-}
-    return(
-        
-        <div key={id} onClick={() => screamSomething()}>{flagged}</div>
+function AdminItem({key, id, feeling, understanding, support, comments, flagged, date}) {
 
-    );
+    const flagReview = (id) => {
+        console.log('what is the id?',id)
+    }
+ return(
+     <>
+        <tr key={key}>
+            <td>{id}</td>
+            <td>{feeling}</td>
+            <td>{understanding}</td>
+            <td>{support}</td>
+            <td>{comments}</td>
+            <td>{flagged}</td>
+            <td>{date}</td>
+            <button onClick={() => flagReview(id)}>Flag</button>
+        </tr>
+     </>
+ )
+
 }
 
 
