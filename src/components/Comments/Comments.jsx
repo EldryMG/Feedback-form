@@ -28,14 +28,9 @@ function Comments() {
             <form onSubmit={(event) => addComments(event)}>
                 <TextField value={commentsValue}
                     type="text"
-                    placeholder='Leave a comment'
+                    label='Leave a comment'
                     onChange={(event) => setCommentsValue(event.target.value)} />
-
-                <Button style = {{ backgroundColor: '#4982dd' }}  
-                                variant="contained" 
-                                size="small" 
-                                type='submit' 
-                                value='Submit'>Submit</Button>
+                <button className="feeling-submit-button" type='submit' value='Submit'>Submit</button>
             </form>
         </>
     );

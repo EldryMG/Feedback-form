@@ -31,15 +31,10 @@ function Support() {
             <h2>How well are you being supported?</h2>
             <form onSubmit={(event) => addSupport(event)}>
                 <TextField value={supportValue}
-                    type="number"
-                    placeholder='number from 1-5'
+                    type="text"
+                    label='number from 1-5'
                     onChange={(event) => setSupportValue(event.target.value)} />
-
-                <Button style = {{ backgroundColor: '#4982dd' }} 
-                                variant="contained" 
-                                size="small" 
-                                type='submit' 
-                                value='Submit'>Submit</Button>
+                <button className="feeling-submit-button" type='submit' value='Submit'>Submit</button>
             </form>
         </>
     );

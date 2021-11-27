@@ -21,7 +21,6 @@ function Feeling() {
 
     const addValue = (event) => {
         event.preventDefault()
-        // console.log(feelingsValue);
         if (feelingsValue > 5 || feelingsValue < 1) {
             alert('Please pick a number between 1 and 5');
         } else {

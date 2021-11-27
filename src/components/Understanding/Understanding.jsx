@@ -38,15 +38,11 @@ function Understanding() {
             <h2>How well are you understanding the content?</h2>
             <form onSubmit={(event) => addUnderstanding(event)}>
                 <TextField value={understandingValue}
-                    type="number"
-                    placeholder='number from 1-5'
+                    type="text"
+                    label='number from 1-5'
                     onChange={(event) => setUnderstandingValue(event.target.value)} />
 
-                <Button style = {{ backgroundColor: '#4982dd' }} 
-                                variant="contained" 
-                                size="small" 
-                                type='submit' 
-                                value='Submit'>Submit</Button>
+            <button className="feeling-submit-button" type='submit' value='Submit'>Submit</button>
             </form>
         </>
     );
