@@ -2,7 +2,17 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import React from 'react';
 import AdminItem from '../AdminItem/AdminItem';
-
+import {
+    Typography,
+    Paper,
+    Grid,
+    TableContainer,
+    Table,
+    TableHead,
+    TableRow,
+    TableCell,
+    TableBody,
+  } from "@mui/material";
 
 
 function Admin(){
@@ -41,20 +51,21 @@ function Admin(){
     return (
         <>
             <h3>Recent Submissions</h3>
-             <p>{JSON.stringify(adminData)}</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Feeling</th>
-                        <th>Understanding</th>
-                        <th>Support</th>
-                        <th>Comments</th>
-                        <th>Flagged</th>
-                        <th>Timestamp</th>
-                    </tr>
-                </thead>
-                <tbody>
+             {/* <p>{JSON.stringify(adminData[0].flagged)}</p> */}
+             <TableContainer>
+            <Table>
+                <TableHead>
+                    <TableRow>
+                        <TableCell>Id</TableCell>
+                        <TableCell>Feeling</TableCell>
+                        <TableCell>Understanding</TableCell>
+                        <TableCell>Support</TableCell>
+                        <TableCell>Comments</TableCell>
+                        <TableCell>Flagged</TableCell>
+                        <TableCell>Timestamp</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
                     {adminData.map(student => {
                         return (<AdminItem key={student.id}
                                            id={student.id}
@@ -65,8 +76,9 @@ function Admin(){
                                            flagged={student.flagged}
                                            date={student.date} />);                   
                     })}
-                </tbody>
-            </table>
+                </TableBody>
+            </Table>
+            </TableContainer>
 
         </>
 
