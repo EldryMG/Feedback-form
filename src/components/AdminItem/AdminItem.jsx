@@ -11,49 +11,52 @@ import {
     TableContainer,
     Table,
     TableHead,
+    Button,
     TableRow,
     TableCell,
     TableBody,
     IconButton,
 } from "@mui/material";
 
-function AdminItem({ key, id, feeling, understanding, support, comments, flagged, date, adminData }) {
+function AdminItem({ key, id, feeling, understanding, support, comments, flagged, date, adminData, getServerInfo }) {
+    
+    const [toggleFlagged, setToggleFlagged] = useState(true)
 
-        const [toggleFlagged, setToggleFlagged] = useState(true)
+    //put Client-side
+    const flagReview = (id) => {
+        setToggleFlagged(!toggleFlagged)
+        console.log('in markFlagged', id)
+        axios({
+            method: 'PUT',
+            url: `/feedback/` + id,
+            data: {
+                id: id,
+                bool: toggleFlagged
+            }
+        }).then(response => {
+            console.log('response.data is', id)
+            getServerInfo();
+        }).catch(error => {
+            console.log('OOPS,', error)
+        })
+    }
 
-    // console.log('what is whatFlagged', whatFlagged);
-
-        //put Client-side
-        const flagReview = (id) => {
-            setToggleFlagged(!toggleFlagged)
-            console.log('in markFlagged', id)
-            axios({
-                method: 'PUT',
-                url: `/feedback/` + id,
-                data: {
-                    id: id,
-                    bool: toggleFlagged
-                }
-            }).then(response => {
-                console.log('response.data is', id)
-                getServerInfo();
-            }).catch(error => {
-                console.log('OOPS,', error)
-            })
-        }
+    useEffect(() => {
+        getServerInfo();
+    }, [])
 
     return (
         <>
             <p>{JSON.stringify(adminData)}</p>
-            <TableRow key={key}>
-                <TableCell>{id}</TableCell>
-                <TableCell>{feeling}</TableCell>
-                <TableCell>{understanding}</TableCell>
-                <TableCell>{support}</TableCell>
-                <TableCell>{comments}</TableCell>
-                <TableCell>{flagged.toString().toUpperCase()}</TableCell>
-                <TableCell>{(moment(date).format('MMM Do YY'))}</TableCell>
-                <button onClick={() => flagReview(id)}>Flag</button>
+            <TableRow key={id}>
+                <TableCell align="center">{id}</TableCell>
+                <TableCell align="center">{feeling}</TableCell>
+                <TableCell align="center">{understanding}</TableCell>
+                <TableCell align="center">{support}</TableCell>
+                <TableCell align="center">{comments}</TableCell>
+                <TableCell align="center">{flagged.toString().toUpperCase()}</TableCell>
+                <TableCell align="center">{(moment(date).format('MMM Do YY'))}</TableCell>
+                <Button variant="contained" size="small" onClick={() => flagReview(id)}>Flag</Button>
             </TableRow>
         </>
     )

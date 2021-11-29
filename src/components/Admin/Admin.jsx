@@ -49,12 +49,12 @@ function Admin() {
                         <TableHead>
                             <TableRow>
                                 <TableCell align="center">Id</TableCell>
-                                <TableCell>Feeling</TableCell>
-                                <TableCell>Understanding</TableCell>
-                                <TableCell>Support</TableCell>
+                                <TableCell align="center">Feeling</TableCell>
+                                <TableCell align="center">Understanding</TableCell>
+                                <TableCell align="center">Support</TableCell>
                                 <TableCell align="center">Comments</TableCell>
-                                <TableCell>Flagged</TableCell>
-                                <TableCell>Timestamp</TableCell>
+                                <TableCell align="center">Flagged</TableCell>
+                                <TableCell align="center">Timestamp</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -66,7 +66,8 @@ function Admin() {
                                     support={student.support}
                                     comments={student.comments}
                                     flagged={student.flagged}
-                                    date={student.date} />);
+                                    date={student.date}
+                                    getServerInfo={getServerInfo} />);
                             })}
                         </TableBody>
                     </Table>
