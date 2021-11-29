@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { useHistory } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
@@ -14,22 +15,36 @@ import {
     TableCell,
     TableBody,
     IconButton,
-  } from "@mui/material";
+} from "@mui/material";
 
-function AdminItem({ key, id, feeling, understanding, support, comments, flagged, date }) {
+function AdminItem({ key, id, feeling, understanding, support, comments, flagged, date, adminData }) {
 
+        const [toggleFlagged, setToggleFlagged] = useState(true)
 
+    // console.log('what is whatFlagged', whatFlagged);
 
-    const flagReview = (id) => {
-        console.log('what is the id?', id)
-        console.log('what is flagged?', flagged)
-    }
+        //put Client-side
+        const flagReview = (id) => {
+            setToggleFlagged(!toggleFlagged)
+            console.log('in markFlagged', id)
+            axios({
+                method: 'PUT',
+                url: `/feedback/` + id,
+                data: {
+                    id: id,
+                    bool: toggleFlagged
+                }
+            }).then(response => {
+                console.log('response.data is', id)
+                getServerInfo();
+            }).catch(error => {
+                console.log('OOPS,', error)
+            })
+        }
 
-    let flaggedOrNot = ''
-
-    
     return (
         <>
+            <p>{JSON.stringify(adminData)}</p>
             <TableRow key={key}>
                 <TableCell>{id}</TableCell>
                 <TableCell>{feeling}</TableCell>

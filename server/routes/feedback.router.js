@@ -4,7 +4,7 @@ const pg = require('pg');
 const pool = require('../modules/pool')
 
 
-// POST to DB
+// POST Add feedback object to DB
 router.post('/', (req, res) => {
         console.log('SERVER SIDE DATA', req.body)
     let feedbackToAdd = req.body;
@@ -36,20 +36,26 @@ router.get('/', (req, res) => {
     })
 })
 
-//Update Admin button
+//Update Admin button -- changed boolean value of flagged status at object with provided id.
 router.put('/:id', (req,res) => {
-    console.log('in PUT', req.params);
-    const itemId = req.params.id;
-    const queryText = `UPDATE "feedback"
-                       SET "flagged" = 'TRUE'
-                       WHERE "id" = $1;`;
-    pool.query(queryText, [itemId]).then((result) => {
-        console.log('IN PUT', itemId);
-        res.sendStatus(200);
+    console.log('in PUT, req.body.bool', req.body.bool);
+    console.log('in PUT, req.params.id', req.params.id);
+//Feedback boolean
+    const feedbackBool = req.body.bool;
+//Feedback id
+    const feedbackId = req.params.id;
+
+    const queryText =  `UPDATE "feedback" 
+                        SET "flagged" = $1 
+                        WHERE "id" = $2;`;
+    pool.query(queryText, [feedbackBool, feedbackId]).then((result) => {
+        console.log('PUT-updated flagged to', feedbackBool);
+        res.sendStatus(201);
     }).catch((error) => {
         console.log('ROUTER SIDE', error);
         res.sendStatus(500);
     });
 });
+
 
 module.exports = router;

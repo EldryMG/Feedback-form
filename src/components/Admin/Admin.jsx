@@ -17,7 +17,9 @@ import {
 
 
 function Admin() {
+
     const [adminData, setAdminData] = useState([]);
+
     //get Client-side
     const getServerInfo = () => {
         axios({
@@ -28,19 +30,6 @@ function Admin() {
             console.log(response.data)
         }).catch(error => {
             console.log('There was an error getting data back', error)
-        })
-    }
-    //put Client-side
-    const markFlagged = (id) => {
-        console.log('in markFlagged', id)
-        axios({
-            method: 'PUT',
-            url: `/feedback/` + id,
-        }).then(response => {
-            console.log('response.data is', id)
-            getServerInfo();
-        }).catch(error => {
-            console.log('OOPS,', error)
         })
     }
 
@@ -59,11 +48,11 @@ function Admin() {
                     <Table >
                         <TableHead>
                             <TableRow>
-                                <TableCell>Id</TableCell>
+                                <TableCell align="center">Id</TableCell>
                                 <TableCell>Feeling</TableCell>
                                 <TableCell>Understanding</TableCell>
                                 <TableCell>Support</TableCell>
-                                <TableCell>Comments</TableCell>
+                                <TableCell align="center">Comments</TableCell>
                                 <TableCell>Flagged</TableCell>
                                 <TableCell>Timestamp</TableCell>
                             </TableRow>
