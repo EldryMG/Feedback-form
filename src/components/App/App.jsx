@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import { HashRouter as Router, Route, useHistory } from 'react-router-dom';
+import { HashRouter as Router, Route, useHistory} from 'react-router-dom';
+// import { useHistory } from "react-router";
 import { Button, Paper } from '@material-ui/core';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
@@ -15,11 +16,12 @@ import Signature from '../Signature/Signature';
 import { IoSkull } from "react-icons/io5";
 
 function App() {
+
   const history = useHistory();
 
   const toAdminx = () => {
     console.log('would this work?')
-    history.push('/')
+    history.push('/understanding')
   }
 
   return (

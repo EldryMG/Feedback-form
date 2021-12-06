@@ -18,6 +18,8 @@ import {
     IconButton,
 } from "@mui/material";
 
+import './AdminItem.css'
+
 function AdminItem({ key, id, feeling, understanding, support, comments, flagged, date, adminData, getServerInfo }) {
     
     const [toggleFlagged, setToggleFlagged] = useState(true)
@@ -34,21 +36,32 @@ function AdminItem({ key, id, feeling, understanding, support, comments, flagged
                 bool: toggleFlagged
             }
         }).then(response => {
-            console.log('response.data is', id)
             getServerInfo();
         }).catch(error => {
             console.log('OOPS,', error)
         })
     }
+    
+
+    let colorChanger=""
+
+    if(toggleFlagged == true){
+        colorChanger='red'
+    } else {
+        colorChanger='blue'
+    }
+
+    console.log('what is toggleFlagged now?,', toggleFlagged)
 
     useEffect(() => {
         getServerInfo();
+        console.log('what is toggleFlagged', toggleFlagged);
     }, [])
 
     return (
         <>
             <p>{JSON.stringify(adminData)}</p>
-            <TableRow key={id}>
+            <TableRow className={colorChanger} key={id}>
                 <TableCell align="center">{id}</TableCell>
                 <TableCell align="center">{feeling}</TableCell>
                 <TableCell align="center">{understanding}</TableCell>
