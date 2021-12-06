@@ -5,18 +5,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import moment from 'moment';
 import {
-    Typography,
-    Paper,
-    Grid,
-    TableContainer,
-    Table,
-    TableHead,
     Button,
     TableRow,
     TableCell,
-    TableBody,
-    IconButton,
 } from "@mui/material";
+
+import { BsTrash } from "react-icons/bs";
 
 import './AdminItem.css'
 
@@ -41,6 +35,8 @@ function AdminItem({ key, id, feeling, understanding, support, comments, flagged
             console.log('OOPS,', error)
         })
     }
+
+    
     
 
     let colorChanger=""
@@ -69,7 +65,8 @@ function AdminItem({ key, id, feeling, understanding, support, comments, flagged
                 <TableCell align="center">{comments}</TableCell>
                 <TableCell align="center">{flagged.toString().toUpperCase()}</TableCell>
                 <TableCell align="center">{(moment(date).format('MMM Do YY'))}</TableCell>
-                <Button variant="contained" size="small" onClick={() => flagReview(id)}>Flag</Button>
+                <Button className="flag-button" sx={{margin: 1}} variant="contained" size="small" onClick={() => flagReview(id)}>Flag</Button>
+                <BsTrash className="trash-bin" onClick={() => deleteFeedback(id)} />
             </TableRow>
         </>
     )

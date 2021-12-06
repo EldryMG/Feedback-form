@@ -3,5 +3,11 @@
 }
 
 .blue{
-    background-color: rgb(212, 121, 93)
+    background-color: rgb(212, 178, 168)
+}
+
+.trash-bin{
+    margin: 7px;
+    color:red;
+    cursor: pointer;
 }
