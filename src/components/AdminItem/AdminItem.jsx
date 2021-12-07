@@ -21,7 +21,6 @@ function AdminItem({ key, id, feeling, understanding, support, comments, flagged
     //put Client-side
     const flagReview = (id) => {
         setToggleFlagged(!toggleFlagged)
-        console.log('in markFlagged', id)
         axios({
             method: 'PUT',
             url: `/feedback/` + id,
@@ -34,6 +33,15 @@ function AdminItem({ key, id, feeling, understanding, support, comments, flagged
         }).catch(error => {
             console.log('OOPS,', error)
         })
+    }
+
+    const deleteFeedback = (id) => {
+        axios.delete(`/feedback/${id}`).then(response => {
+            console.log(response);
+            getServerInfo();
+        }).catch(error => {
+            console.log(error)
+        });
     }
 
     

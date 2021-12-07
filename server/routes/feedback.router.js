@@ -6,9 +6,9 @@ const pool = require('../modules/pool')
 
 // POST Add feedback object to DB
 router.post('/', (req, res) => {
-        console.log('SERVER SIDE DATA', req.body)
+    // console.log('SERVER SIDE DATA', req.body)
     let feedbackToAdd = req.body;
-    console.log('this is feedbackToAdd', feedbackToAdd);
+    // console.log('this is feedbackToAdd', feedbackToAdd);
     let sqlText = `INSERT INTO feedback ("feeling", "understanding", "support", "comments")
                     VALUES ($1, $2, $3, $4);`;
     pool.query(sqlText, [feedbackToAdd.feeling,
@@ -38,8 +38,8 @@ router.get('/', (req, res) => {
 
 //Update Admin button -- changed boolean value of flagged status at object with provided id.
 router.put('/:id', (req,res) => {
-    console.log('in PUT, req.body.bool', req.body.bool);
-    console.log('in PUT, req.params.id', req.params.id);
+    // console.log('in PUT, req.body.bool', req.body.bool);
+    // console.log('in PUT, req.params.id', req.params.id);
 //Feedback boolean
     const feedbackBool = req.body.bool;
 //Feedback id
@@ -56,6 +56,10 @@ router.put('/:id', (req,res) => {
         res.sendStatus(500);
     });
 });
+
+router.delete('/:id', (req, res) => {
+    console.log('in DELETE, req.params.id', req.params.id)
+})
 
 
 module.exports = router;
