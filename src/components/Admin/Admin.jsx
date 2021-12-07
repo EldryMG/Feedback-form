@@ -40,21 +40,21 @@ function Admin() {
 
     return (
         <>
-            <h3>Recent Submissions</h3>
+            <h1>Recent Submissions</h1>
             {/* <p>{JSON.stringify(adminData[0].flagged)}</p> */}
             {/* <Paper elevation={4} className="adminPaper"> */}
             <div className="table-container">
-                <TableContainer component={Paper} elevation={4} sx={{ margin: 11, padding: 7, maxWidth: 850, textAlign: "center"}} >
-                    <Table >
+                <TableContainer component={Paper} elevation={4} sx={{ margin: 7, padding: 7, maxWidth: 850, textAlign: "center"}} >
+                    <Table stickyHeader aria-label="feedback table" >
                         <TableHead>
                             <TableRow>
-                                <TableCell align="center">Id</TableCell>
-                                <TableCell align="center">Feeling</TableCell>
-                                <TableCell align="center">Understanding</TableCell>
-                                <TableCell align="center">Support</TableCell>
-                                <TableCell align="center">Comments</TableCell>
-                                <TableCell align="center">Flagged</TableCell>
-                                <TableCell align="center">Timestamp</TableCell>
+                                <TableCell align="center">ID</TableCell>
+                                <TableCell align="center">FEELING</TableCell>
+                                <TableCell align="center">UNDERSTANDING</TableCell>
+                                <TableCell align="center">SUPPORT</TableCell>
+                                <TableCell align="center">COMMENTS</TableCell>
+                                <TableCell align="center">FLAGGED</TableCell>
+                                <TableCell align="center">TIMESTAMP</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
