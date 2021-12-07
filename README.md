@@ -38,6 +38,10 @@ This is my version of Prime Digital Academy's Daily Reflections Form.  This was 
 5. You will not be able to submit the feedback if the first three categories have not been rated—in that case, the "Submit" button will be disabled.
 6. After reviewing your feedback, select "Submit" to submit the feedback.
 7. You will be taken to a screen notifying you that your feedback has been captured, and offering the chance to provide new feedback by selecting the "Retake Survey" button.
+  
+  
+![Alttext](https://media0.giphy.com/media/QWiFe0D5anpfUiqNz8/giphy.gif)
+  
 8. Admin users will have access to all the feedback by navigating to `localhost:3000/#/admin`.
 9. Here, admin users can review all the feedback given in a table.
 10. Admin users can toggle whether a post should be flagged by clicking on the "flag" icon in the "Flagged" column. A gray, empty flag will indicate that the feedback has not been flagged. When a post is flagged, the row will turn a dark red color.
