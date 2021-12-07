@@ -42,6 +42,7 @@ function AdminItem({ key, id, feeling, understanding, support, comments, flagged
         }).catch(error => {
             console.log(error)
         });
+        alert('Feedback removed')
     }
 
     

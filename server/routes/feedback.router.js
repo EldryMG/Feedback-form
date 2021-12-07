@@ -38,8 +38,6 @@ router.get('/', (req, res) => {
 
 //Update Admin button -- changed boolean value of flagged status at object with provided id.
 router.put('/:id', (req,res) => {
-    // console.log('in PUT, req.body.bool', req.body.bool);
-    // console.log('in PUT, req.params.id', req.params.id);
 //Feedback boolean
     const feedbackBool = req.body.bool;
 //Feedback id
@@ -52,14 +50,21 @@ router.put('/:id', (req,res) => {
         console.log('PUT-updated flagged to', feedbackBool);
         res.sendStatus(201);
     }).catch((error) => {
-        console.log('ROUTER SIDE', error);
+        console.log('Error in /feedback PUT', error);
         res.sendStatus(500);
     });
 });
 
 router.delete('/:id', (req, res) => {
     console.log('in DELETE, req.params.id', req.params.id)
-})
+    const queryText = 'DELETE FROM "feedback" WHERE "id" = $1;';
+    pool.query(queryText, [req.params.id]).then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('Error in /feedback DELETE', error);
+        res.sendStatus(500);
+    });
+});
 
 
 module.exports = router;
