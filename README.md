@@ -31,8 +31,8 @@ This is my version of Prime Digital Academy's Daily Reflections Form.  This was 
   
 ![Alttext](https://media2.giphy.com/media/yuNbS9vj4SnTEnM3XX/giphy.gif)
 
-1. Navigating to `localhost:3000/` will start the feedback process. Select the rating that you would like to give for each of the three categories (feeling, understanding, and support) by clicking on the rating bar and then clicking on the "next" button. Optionally, you can use the keyboard by pressing tab until the rating bar is in focus, adjusting the rating with the arrow keys, pressing tab until the "Next" button is in focus, and pressing Enter.
-2. Each of the three categories need to be given a rating. The "Next" button will be disabled for each category until that category is given a rating.
+1. Navigating to `localhost:3000/` will start the feedback process. Select the rating that you would like to give for each of the three categories (feeling, understanding, and support) by entering a number between 1 and 5. Any number above or below will prompt an error message. 
+2. Each of the three categories need to be given a rating. The "Submit" button will be disabled for each category until that category is given a rating.
 3. You can always opt to change a rating or comments provided previously by navigating backward with the "Back" button.
 4. Once all the categories have ratings and comments have optionally been provided, you will land on the review page, where you can review the feedback before final submission. From here, you can always navigate backward to adjust the feedback in any of the four categories.
 5. You will not be able to submit the feedback if the first three categories have not been rated—in that case, the "Submit" button will be disabled.
@@ -40,8 +40,8 @@ This is my version of Prime Digital Academy's Daily Reflections Form.  This was 
 7. You will be taken to a screen notifying you that your feedback has been captured, and offering the chance to provide new feedback by selecting the "Retake Survey" button.
 8. Admin users will have access to all the feedback by navigating to `localhost:3000/#/admin`.
 9. Here, admin users can review all the feedback given in a table.
-10. Admin users can toggle whether a post should be flagged by clicking on the "flag" icon in the "Flagged" column. A gray, empty flag will indicate that the feedback has not been flagged.
-11. Admin users can delete specific feedback by clicking on the "trash can" icon in the "Delete" column. A confirmation modal will pop up asking the user to confirm the attempt to delete the feedback. Selecting "Delete" will permanently remove the feedback.
+10. Admin users can toggle whether a post should be flagged by clicking on the "flag" icon in the "Flagged" column. A gray, empty flag will indicate that the feedback has not been flagged. When a post is flagged, the row will turn a dark red color.
+11. Admin users can delete specific feedback by clicking on the "trash can" icon in the "Delete" column. A modal will appear to let the user know the post was deleted.
 
 ## Built With
 
